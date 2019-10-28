@@ -39,7 +39,7 @@ class CustomSplash extends StatefulWidget {
     _outputAndHome = outputAndHome;
     _backGroundColor = backGroundColor;
     _animationEffect = animationEffect;
-    _logoSize = 250.0;
+    _logoSize = logosize;
   }
 
   @override
