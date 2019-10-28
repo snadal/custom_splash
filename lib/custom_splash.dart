@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 Widget _home;
 Function _customFunction;
 String _imagePath;
+String _backgroundImagePath;
 int _duration;
 CustomSplashType _runfor;
 Color _backGroundColor;
@@ -20,6 +21,7 @@ class CustomSplash extends StatefulWidget {
   CustomSplash(
       {@required String imagePath,
       @required Widget home,
+      String backgroundImagePath,
       Function customFunction,
       int duration,
       CustomSplashType type,
@@ -40,6 +42,7 @@ class CustomSplash extends StatefulWidget {
     _backGroundColor = backGroundColor;
     _animationEffect = animationEffect;
     _logoSize = logosize;
+    _backgroundImagePath = backgroundImagePath;
   }
 
   @override
@@ -125,7 +128,18 @@ class _CustomSplashState extends State<CustomSplash>
 
     return Scaffold(
       backgroundColor: _backGroundColor,
-      body: _buildAnimation()
+      body: DecoratedBox(
+              position: DecorationPosition.background,
+              decoration: BoxDecoration(
+                color: _backGroundColor,
+                image: DecorationImage(
+                    image: AssetImage(_backgroundImagePath),
+                    fit: BoxFit.cover),
+              ),
+              child: 
+                _buildAnimation()
+              )
+       ),
     );
   }
 }
