@@ -41,7 +41,7 @@ class CustomSplash extends StatefulWidget {
     _outputAndHome = outputAndHome;
     _backGroundColor = backGroundColor;
     _animationEffect = animationEffect;
-    _logoSize = logosize;
+    _logoSize = logoSize;
     _backgroundImagePath = backgroundImagePath;
   }
 
@@ -139,7 +139,6 @@ class _CustomSplashState extends State<CustomSplash>
               child: 
                 _buildAnimation()
               )
-       ),
-    );
+      );
   }
 }
